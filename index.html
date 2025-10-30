@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ethics.ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ethics<span>.ai</span></div>
+        <nav>
+            <a href="features.html">Features</a>
+            <a href="enterprise.html">Enterprise</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+        <button class="signin-btn" onclick="showPopup()">Sign in</button>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>We let AI handle ethics, so you don't have to</h1>
+            <p>Empowering the future with state-of-the-art AI solutions.</p>
+            <a href="contact.html" class="cta-btn">Get In Touch</a>
+        </section>
+    </main>
+    <div id="signin-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup()">&times;</span>
+            <p>what did you expect</p>
+        </div>
+    </div>
+    <footer>
+        © 2025 ethics.ai. No Rights Reserved.
+    </footer>
+    <script>
+        function showPopup() {
+            document.getElementById('signin-popup').style.display = 'flex';
+        }
+        function hidePopup() {
+            document.getElementById('signin-popup').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            var popup = document.getElementById('signin-popup');
+            if (event.target == popup) {
+                hidePopup();
+            }
+        }
+    </script>
+</body>
+</html>
