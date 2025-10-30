@@ -26,7 +26,8 @@ header {
     font-size: 2.4rem;
     color: #a69aff;
     letter-spacing: 2px;
-    font-weight: bold;
+    font-weight: 300;
+    font-style: normal;
     transition: text-shadow 0.3s;
     text-shadow: 0 3px 22px #4c0f8b77;
     cursor: pointer;
