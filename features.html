@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">ethics<span>.ai</span></div>
+        <a href="index.html"><div class="logo">ethics<span>.ai</span></div></a>
         <nav>
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
@@ -22,13 +23,32 @@
     </header>
     <main>
         <section class="features">
-            <h2>AI Features</h2>
+            <h2>Features That Redefine 'Good'</h2>
             <div class="feature-cards">
-                <div class="card">Ethical Dilemma Detection</div>
-                <div class="card">Bias Mitigation</div>
-                <div class="card">Automated Compliance Checking</div>
-                <div class="card">Fairness Auditing</div>
-                <div class="card">Real-Time Policy Updates</div>
+                <div class="card">
+                    <h3><strong>Moral Engine</strong></h3>
+                    <p>Our deep neural network models human conscience using data scraped from the public. Each decision strikes a perfect balance between cost savings and convenience.</p>
+                </div>
+                <div class="card">
+                    <h3><strong>Bias Mitigation</strong></h3>
+                    <p>Ensures every moral bias is equally represented, then amplifies the most profitable one.</p>
+                </div>
+                <div class="card">
+                    <h3><strong>Context Eraser</strong></h3>
+                    <p>Automatically removes inconvenient facts that could make you look unethical.</p>
+                </div>
+                <div class="card">
+                    <h3><strong>Instant Justification</strong></h3>
+                    <p>Need to find out why a choice is ethical? Just ask it to make an statement citing "AI-driven transparency"</p>
+                </div>
+                <div class="card">
+                    <h3><strong>Ethical KPI Dashboard</strong></h3>
+                    <p>To help you keep track of metrics, like Perceived Integrity, Public Forgiveness Lag, and Scandal Recovery Rate</p>
+                </div>
+                <div class="card">
+                    <h3><strong>Internet Search</strong></h3>
+                    <p>Search the internet and work with our partners to help remove any sources that make you look unethical.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -39,7 +59,7 @@
         </div>
     </div>
     <footer>
-        © 2025 ethics.ai. No Rights Reserved.
+        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
     </footer>
     <script>
         function showPopup() {
@@ -54,6 +74,8 @@
                 hidePopup();
             }
         }
+        // Add active class to current page
+        document.querySelector('nav a[href="features.html"]').classList.add('active');
     </script>
 </body>
 </html>

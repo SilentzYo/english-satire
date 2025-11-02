@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', Arial, sans-serif;
-    background: linear-gradient(135deg, #15172b 0%, #312e81 100%);
-    color: #e4e4ec;
+    background: #fffff0;
+    color: #333333;
     min-height: 100vh;
     transition: background 0.7s;
 }
@@ -13,30 +13,32 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4vw 1.5rem;
-    background: rgba(17, 15, 37, 0.89);
-    box-shadow: 0 2px 18px rgba(35, 28, 87, 0.12);
+    background: #fffff0;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 10;
     animation: fadeInTop 1s cubic-bezier(.61,-0.18,.44,1.11);
 }
 
+header a {
+    text-decoration: none;
+}
 .logo {
     font-family: 'Bitcount Grid Single', Arial, sans-serif;
     font-size: 2.4rem;
-    color: #a69aff;
+    color: #333333;
     letter-spacing: 2px;
     font-weight: 300;
     font-style: normal;
     transition: text-shadow 0.3s;
-    text-shadow: 0 3px 22px #4c0f8b77;
     cursor: pointer;
 }
 .logo span {
-    color: #39eaff;
+    color: #666666;
 }
 .logo:hover {
-    text-shadow: 0 6px 32px #39eaffbb, 0 3px 22px #4c0f8b77;
+    opacity: 0.8;
 }
 nav {
     display: flex;
@@ -45,7 +47,7 @@ nav {
     gap: 0;
 }
 nav a {
-    color: #e4e4ec;
+    color: #666666;
     font-weight: 600;
     text-decoration: none;
     margin-left: 2rem;
@@ -58,16 +60,27 @@ nav a:after {
     display: block;
     height: 3px;
     width: 0;
-    background: linear-gradient(90deg,#805ad5,#39eaff);
+    background: #666666;
     border-radius: 4px;
     transition: width 0.3s;
     margin-top: 2px;
 }
 nav a:hover {
-    color: #39eaff;
+    color: #333333;
 }
 nav a:hover:after {
     width: 100%;
+}
+nav a.active {
+    pointer-events: none;
+    cursor: default;
+    color: #333333;
+}
+nav a.active:hover {
+    color: #333333;
+}
+nav a.active:hover:after {
+    width: 0;
 }
 .hero {
     min-height: 60vh;
@@ -83,20 +96,133 @@ nav a:hover:after {
     font-size: 3.2rem;
     margin-bottom: 1rem;
     letter-spacing: 1.5px;
-    color: #39eaff;
-    text-shadow: 0 3px 32px #3e268f99;
-    animation: glowText 2.2s infinite alternate;
+    color: #333333;
 }
 .hero p {
     font-size: 1.3rem;
-    color: #bdbdf7;
+    color: #666666;
     margin-bottom: 2.2rem;
     max-width: 600px;
     transition: color 0.3s;
 }
+.trusted-by {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+.trusted-by h2 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 2rem;
+    letter-spacing: 0.8px;
+}
+.company-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.company-card {
+    background: #e8e8e8;
+    color: #333333;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, background 0.3s;
+}
+.company-card:hover {
+    transform: translateY(-4px);
+    background: #d4d4d4;
+}
+.ethics-box {
+    background: #f0ead6;
+    border-radius: 1.2rem;
+    padding: 4.5rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+    text-align: left;
+}
+.ethics-box h2 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2.8rem;
+    color: #333333;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.8px;
+}
+.ethics-box p {
+    font-size: 1.3rem;
+    color: #666666;
+    line-height: 1.8;
+}
+.stats-section {
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 0 4.5rem;
+}
+.stats-divider {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin: 2rem 0 3rem;
+}
+.stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.stat-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat-card-left {
+    margin-right: 0;
+    padding-right: 1rem;
+}
+.stat-card-right {
+    margin-left: 0;
+    padding-left: 1rem;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+.stat-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+.stat-card p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+    line-height: 1.6;
+}
+.stat-green {
+    background: #c8e6c9;
+}
+.stat-beige {
+    background: #f0ead6;
+}
+.stat-purple {
+    background: #e1bee7;
+}
 .cta-btn {
     display: inline-block;
-    background: linear-gradient(90deg,#805ad5,#39eaff);
+    background: #333333;
     color: #fff;
     font-size: 1.1rem;
     font-weight: bold;
@@ -105,13 +231,13 @@ nav a:hover:after {
     border: none;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 3px 24px #39eaff40;
+    box-shadow: 0 3px 24px rgba(0, 0, 0, 0.2);
     transition: background 0.4s, box-shadow 0.2s, transform 0.2s;
     letter-spacing: 1px;
 }
 .cta-btn:hover {
-    background: linear-gradient(90deg,#39eaff 20%,#805ad5 90%);
-    box-shadow: 0 6px 44px #39eaff99;
+    background: #555555;
+    box-shadow: 0 6px 44px rgba(0, 0, 0, 0.3);
     transform: translateY(-4px) scale(1.04);
 }
 .features {
@@ -119,8 +245,8 @@ nav a:hover:after {
     text-align: center;
 }
 .features h2 {
-    font-family: 'Orbitron', Arial, sans-serif;
-    color: #39eaff;
+    font-family: 'Oswald', Arial, sans-serif;
+    color: #333333;
     font-size: 2.1rem;
     margin-bottom: 2.5rem;
     letter-spacing: 0.8px;
@@ -130,26 +256,42 @@ nav a:hover:after {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .card {
-    background: linear-gradient(135deg,#232c47 60%,#443877 100%);
-    color: #fafaff;
+    background: #e8e8e8;
+    color: #333333;
     padding: 2rem 2.5rem;
     border-radius: 1.2rem;
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 28px #251f4f50;
-    margin: 0.5rem;
-    min-width: 220px;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 1.34rem);
     transition: transform 0.3s, background 0.4s;
     opacity: 0;
     animation: fadeInUp 1.1s 0.7s forwards;
 }
+.card h3 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333333;
+}
+.card p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666666;
+}
+.pricing-cards .card {
+    background: #f0ead6;
+}
 .card:hover {
     transform: scale(1.07) rotate(-2deg);
-    background: linear-gradient(120deg,#2a3a7a 60%,#39eaff 100%);
-    color: #15172b;
+    background: #d4d4d4;
+    color: #333333;
     cursor: pointer;
 }
 .about {
@@ -158,8 +300,8 @@ nav a:hover:after {
     animation: fadeIn 1.6s 1.2s both;
 }
 .about h2 {
-    color: #a69aff;
-    font-family: 'Orbitron', Arial, sans-serif;
+    color: #333333;
+    font-family: 'Oswald', Arial, sans-serif;
     font-size: 2rem;
     margin-bottom: 1.4rem;
 }
@@ -169,8 +311,8 @@ nav a:hover:after {
     animation: fadeIn 1.6s 1.8s both;
 }
 .contact h2 {
-    color: #39eaff;
-    font-family: 'Orbitron', Arial, sans-serif;
+    color: #333333;
+    font-family: 'Oswald', Arial, sans-serif;
     font-size: 2rem;
     margin-bottom: 1.4rem;
 }
@@ -182,22 +324,22 @@ form {
     margin: 0 auto;
 }
 input, textarea {
-    background: #232c47;
-    border: 1px solid #a3bffa;
+    background: #e8e8e8;
+    border: 1px solid #cccccc;
     border-radius: 0.8rem;
     padding: 1rem;
-    color: #e4e4ec;
+    color: #333333;
     font-size: 1rem;
     font-family: 'Montserrat', Arial, sans-serif;
     outline: none;
     transition: border 0.3s, background 0.3s;
 }
 input:focus, textarea:focus {
-    border-color: #39eaff;
-    background: #1d233a;
+    border-color: #666666;
+    background: #ffffff;
 }
 button[type="submit"] {
-    background: linear-gradient(90deg,#805ad5,#39eaff);
+    background: #333333;
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
@@ -206,18 +348,18 @@ button[type="submit"] {
     border: none;
     cursor: pointer;
     margin-top: 0.7rem;
-    box-shadow: 0 3px 16px #39eaff60;
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.2);
     transition: background 0.3s, box-shadow 0.2s;
 }
 button[type="submit"]:hover {
-    background: linear-gradient(90deg,#39eaff,#805ad5);
-    box-shadow: 0 6px 32px #39eaffbb;
+    background: #555555;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.3);
 }
 footer {
     padding: 2rem;
     text-align: center;
-    background: rgba(17, 15, 37, 0.89);
-    color: #61587e;
+    background: #fffff0;
+    color: #999999;
     letter-spacing: 0.5px;
     font-size: 1rem;
     margin-top: 4rem;
@@ -243,7 +385,7 @@ footer {
 }
 
 .signin-btn {
-    background: linear-gradient(90deg,#805ad5,#39eaff);
+    background: #333333;
     color: #fff;
     font-size: 1.08rem;
     font-weight: bold;
@@ -252,12 +394,12 @@ footer {
     border: none;
     cursor: pointer;
     margin-left: 2rem;
-    box-shadow: 0 3px 16px #4d36c540;
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.2);
     transition: background 0.4s, transform 0.2s;
     font-family: 'Montserrat', Arial, sans-serif;
 }
 .signin-btn:hover {
-    background: linear-gradient(90deg,#39eaff 20%,#805ad5 90%);
+    background: #555555;
     transform: translateY(-3px) scale(1.06);
 }
 .popup {
@@ -270,16 +412,16 @@ footer {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background: rgba(18,19,36,0.84);
+    background: rgba(0, 0, 0, 0.5);
     animation: popupfade 0.3s ease;
 }
 
 .popup-content {
-    background: linear-gradient(120deg,#232c47 60%,#443877 100%);
+    background: #333333;
     color: #fff;
     padding: 2.3rem 3.2rem;
     border-radius: 1.4rem;
-    box-shadow: 0 7px 64px #300c8f5c;
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.3);
     font-size: 1.2rem;
     font-family: 'Orbitron', Arial, sans-serif;
     text-align: center;
@@ -292,14 +434,14 @@ footer {
     position: absolute;
     right: 1rem;
     top: 0.8rem;
-    color: #39eaff;
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
     cursor: pointer;
     transition: color 0.2s;
 }
 .close-btn:hover {
-    color: #e63b7a;
+    color: #cccccc;
 }
 
 @keyframes popupin {

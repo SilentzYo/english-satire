@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">ethics<span>.ai</span></div>
+        <a href="index.html"><div class="logo">ethics<span>.ai</span></div></a>
         <nav>
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
@@ -25,26 +26,26 @@
             <h2>Pricing</h2>
             <div class="feature-cards pricing-cards">
                 <div class="card">
-                    <h3>Starter</h3>
-                    <p class="price">$0/mo</p>
+                    <h3>Ethics Lite</h3>
+                    <p class="price">$Your Ethics</p>
                     <ul>
                         <li>Basic Monitoring</li>
-                        <li>Email Support</li>
-                        <li>Single User</li>
+                        <li>Handles Minor Ethical Dilemmas</li>
+                        <li>Includes Ads for Ethical Crypto Startups</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Professional</h3>
-                    <p class="price">$29/mo</p>
+                    <h3>Ethics Pro</h3>
+                    <p class="price">$Your Family</p>
                     <ul>
-                        <li>Full Analytics</li>
-                        <li>Priority Support</li>
-                        <li>Up to 10 Users</li>
+                        <li>Generates Corporate-Level Reports</li>
+                        <li>Autonomously Creates Ethical Policies</li>
+                        <li>24/7 Ethical Support Chatbot/li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Enterprise</h3>
-                    <p class="price">Custom</p>
+                    <h3>Ethics Enterprise</h3>
+                    <p class="price">$Your Company</p>
                     <ul>
                         <li>Dedicated Success Manager</li>
                         <li>Advanced Integrations</li>
@@ -61,7 +62,7 @@
         </div>
     </div>
     <footer>
-        © 2025 ethics.ai. No Rights Reserved.
+        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
     </footer>
     <script>
         function showPopup() {
@@ -76,6 +77,8 @@
                 hidePopup();
             }
         }
+        // Add active class to current page
+        document.querySelector('nav a[href="pricing.html"]').classList.add('active');
     </script>
 </body>
 </html>
