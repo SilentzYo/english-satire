@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | ethics.ai</title>
+    <meta name="description" content="Frequently Asked Questions about ethics.ai's moral automation services">
+    <meta name="keywords" content="AI ethics FAQ, ethical AI questions, moral automation FAQ">
+    <title>FAQ | ethics.ai</title>
+    <!-- Preload fonts for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -12,47 +15,93 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><div class="logo">ethics<span>.ai</span></div></a>
-        <nav>
+        <div class="logo" role="banner">
+            <a href="index.html" aria-label="ethics.ai home">ethics<span>.ai</span></a>
+        </div>
+        <nav aria-label="Main navigation">
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
             <a href="pricing.html">Pricing</a>
-            <a href="resources.html">Resources</a>
+            <a href="resources.html">FAQ</a>
         </nav>
-        <button class="signin-btn" onclick="showPopup()">Sign in</button>
+        <button class="signin-btn" aria-label="Sign in" onclick="showPopup()">Sign in</button>
     </header>
     <main>
-        <section class="about">
-            <h2>Resources</h2>
-            <ul class="resources-list" style="max-width:500px;margin:2rem auto 4rem;">
-                <li><a href="#" target="_blank">AI and Ethics: A Beginner's Guide (Blog)</a></li>
-                <li><a href="#" target="_blank">Responsible AI Tutorial Series</a></li>
-                <li><a href="#" target="_blank">Download: Ethics.AI 2025 Whitepaper (PDF)</a></li>
-            </ul>
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <h1 id="faq-heading">Frequently Asked Questions</h1>
+            <div class="faq-grid">
+                <article class="faq-item">
+                    <h2 class="question">Isn't outsourcing morality dangerous?</h2>
+                    <p class="answer">Only if you believe in danger.</p>
+                </article>
+
+                <article class="faq-item">
+                    <h2 class="question">How does ethics.ai handle bias?</h2>
+                    <p class="answer">What bias?</p>
+                </article>
+
+                <article class="faq-item">
+                    <h2 class="question">Does ethics.ai replace human judgment?</h2>
+                    <p class="answer">No, it monetizes it.</p>
+                </article>
+
+                <article class="faq-item">
+                    <h2 class="question">What happens if the AI makes an unethical decision?</h2>
+                    <p class="answer">That's impossible. Our AI defines what's ethical.</p>
+                </article>
+
+                <article class="faq-item">
+                    <h2 class="question">How do you ensure transparency?</h2>
+                    <p class="answer">We use a proprietary opacity algorithm.</p>
+                </article>
+
+                <article class="faq-item">
+                    <h2 class="question">What's your refund policy?</h2>
+                    <p class="answer">The AI has determined that refunds are unethical.</p>
+                </article>
+            </div>
         </section>
     </main>
-    <div id="signin-popup" class="popup">
+    <div id="signin-popup" class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true" hidden>
         <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup()">&times;</span>
-            <p>what did you expect</p>
+            <button class="close-btn" onclick="hidePopup()" aria-label="Close popup">&times;</button>
+            <h2 id="popup-title">Sign In</h2>
+            <p>What did you expect?</p>
         </div>
     </div>
-    <footer>
-        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
+    
+    <footer role="contentinfo">
+        <p>&copy; 2025 ethics.ai. All Rights Reserved.</p>
+        <p class="disclaimer">ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.</p>
     </footer>
+
     <script>
+        // Popup functionality
+        const popup = document.getElementById('signin-popup');
+        
         function showPopup() {
-            document.getElementById('signin-popup').style.display = 'flex';
+            popup.hidden = false;
+            popup.querySelector('button').focus();
         }
+        
         function hidePopup() {
-            document.getElementById('signin-popup').style.display = 'none';
+            popup.hidden = true;
         }
-        window.onclick = function(event) {
-            var popup = document.getElementById('signin-popup');
-            if (event.target == popup) {
+        
+        // Close popup when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
                 hidePopup();
             }
-        }
+        });
+
+        // Close popup with Escape key
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !popup.hidden) {
+                hidePopup();
+            }
+        });
+
         // Add active class to current page
         document.querySelector('nav a[href="resources.html"]').classList.add('active');
     </script>

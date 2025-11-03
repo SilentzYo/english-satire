@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | ethics.ai</title>
+    <meta name="description" content="Flexible pricing plans for AI-powered ethical decision making solutions">
+    <meta name="keywords" content="ethics.ai pricing, AI ethics plans, moral automation pricing">
+    <title>Pricing Plans | ethics.ai</title>
+    <!-- Preload fonts for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -12,71 +15,135 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><div class="logo">ethics<span>.ai</span></div></a>
-        <nav>
+        <div class="logo" role="banner">
+            <a href="index.html" aria-label="ethics.ai home">ethics<span>.ai</span></a>
+        </div>
+        <nav aria-label="Main navigation">
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
             <a href="pricing.html">Pricing</a>
             <a href="resources.html">Resources</a>
         </nav>
-        <button class="signin-btn" onclick="showPopup()">Sign in</button>
+        <button class="signin-btn" aria-label="Sign in" onclick="showPopup()">Sign in</button>
     </header>
     <main>
-        <section class="features">
-            <h2>Pricing</h2>
-            <div class="feature-cards pricing-cards">
-                <div class="card">
-                    <h3>Ethics Lite</h3>
-                    <p class="price">$Your Ethics</p>
-                    <ul>
-                        <li>Basic Monitoring</li>
-                        <li>Handles Minor Ethical Dilemmas</li>
-                        <li>Includes Ads for Ethical Crypto Startups</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Ethics Pro</h3>
-                    <p class="price">$Your Family</p>
-                    <ul>
-                        <li>Generates Corporate-Level Reports</li>
-                        <li>Autonomously Creates Ethical Policies</li>
-                        <li>24/7 Ethical Support Chatbot/li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Ethics Enterprise</h3>
-                    <p class="price">$Your Company</p>
-                    <ul>
-                        <li>Dedicated Success Manager</li>
-                        <li>Advanced Integrations</li>
-                        <li>Unlimited Users</li>
-                    </ul>
-                </div>
+        <section class="pricing-section" aria-labelledby="pricing-heading">
+            <h1 id="pricing-heading">Choose Your Ethical Future</h1>
+            <p class="pricing-subtitle">Select the plan that aligns with your moral flexibility</p>
+            
+            <div class="pricing-grid" role="list">
+                <article class="pricing-card" role="listitem">
+                    <div class="card-header">
+                        <h2>Ethics Lite</h2>
+                        <p class="price">$Your Ethics</p>
+                        <p class="price-subtitle">Perfect for moral startups</p>
+                    </div>
+                    <div class="card-features">
+                        <ul aria-label="Ethics Lite features">
+                            <li class="included">Basic Moral Monitoring</li>
+                            <li class="included">Handle Minor Ethical Dilemmas</li>
+                            <li class="included">5 Automated Apologies/month</li>
+                            <li class="included">Basic Conscience Outsourcing</li>
+                            <li class="excluded">Advanced Moral Flexibility</li>
+                            <li class="excluded">Ethical Policy Generation</li>
+                            <li class="excluded">24/7 Moral Support</li>
+                            <li class="excluded">Custom Bias Training</li>
+                            <li class="excluded">Ethics Whitewashing</li>
+                            <li class="excluded">Unlimited Users</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-cta">Start Free Trial</a>
+                </article>
+
+                <article class="pricing-card featured" role="listitem">
+                    <div class="card-header">
+                        <div class="popular-tag">Most Popular</div>
+                        <h2>Ethics Pro</h2>
+                        <p class="price">$Your Family</p>
+                        <p class="price-subtitle">For growing moral debts</p>
+                    </div>
+                    <div class="card-features">
+                        <ul aria-label="Ethics Pro features">
+                            <li class="included">Everything in Lite, plus:</li>
+                            <li class="included">Advanced Moral Flexibility</li>
+                            <li class="included">Ethical Policy Generation</li>
+                            <li class="included">24/7 Moral Support</li>
+                            <li class="included">Custom Bias Training</li>
+                            <li class="included">25 Automated Apologies/month</li>
+                            <li class="included">Ethics Whitewashing</li>
+                            <li class="excluded">Unlimited Users</li>
+                            <li class="excluded">Dedicated Success Manager</li>
+                            <li class="excluded">Custom Moral Framework</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-cta">Upgrade Morality</a>
+                </article>
+
+                <article class="pricing-card" role="listitem">
+                    <div class="card-header">
+                        <h2>Ethics Enterprise</h2>
+                        <p class="price">$Your Company</p>
+                        <p class="price-subtitle">For ethical innovation at scale</p>
+                    </div>
+                    <div class="card-features">
+                        <ul aria-label="Ethics Enterprise features">
+                            <li class="included">Everything in Pro, plus:</li>
+                            <li class="included">Unlimited Users</li>
+                            <li class="included">Dedicated Success Manager</li>
+                            <li class="included">Custom Moral Framework</li>
+                            <li class="included">Unlimited Automated Apologies</li>
+                            <li class="included">Priority Ethics Support</li>
+                            <li class="included">Advanced Integrations</li>
+                            <li class="included">Ethical Crisis Management</li>
+                            <li class="included">Moral Debt Restructuring</li>
+                            <li class="included">Ethics Board Automation</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-cta">Contact Sales</a>
+                </article>
             </div>
         </section>
     </main>
-    <div id="signin-popup" class="popup">
+    <div id="signin-popup" class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true" hidden>
         <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup()">&times;</span>
-            <p>what did you expect</p>
+            <button class="close-btn" onclick="hidePopup()" aria-label="Close popup">&times;</button>
+            <h2 id="popup-title">Sign In</h2>
+            <p>What did you expect?</p>
         </div>
     </div>
-    <footer>
-        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
+    
+    <footer role="contentinfo">
+        <p>&copy; 2025 ethics.ai. All Rights Reserved.</p>
+        <p class="disclaimer">ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.</p>
     </footer>
+
     <script>
+        // Popup functionality
+        const popup = document.getElementById('signin-popup');
+        
         function showPopup() {
-            document.getElementById('signin-popup').style.display = 'flex';
+            popup.hidden = false;
+            popup.querySelector('button').focus();
         }
+        
         function hidePopup() {
-            document.getElementById('signin-popup').style.display = 'none';
+            popup.hidden = true;
         }
-        window.onclick = function(event) {
-            var popup = document.getElementById('signin-popup');
-            if (event.target == popup) {
+        
+        // Close popup when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
                 hidePopup();
             }
-        }
+        });
+
+        // Close popup with Escape key
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !popup.hidden) {
+                hidePopup();
+            }
+        });
+
         // Add active class to current page
         document.querySelector('nav a[href="pricing.html"]').classList.add('active');
     </script>

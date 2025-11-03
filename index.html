@@ -3,85 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ethics.ai</title>
+    <meta name="description" content="ethics.ai - Empowering the future with state-of-the-art AI solutions for ethical decision making">
+    <meta name="keywords" content="AI ethics, artificial intelligence, ethical decisions, moral AI">
+    <title>ethics.ai - AI-Powered Ethical Decision Making</title>
+    <!-- Preload fonts for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Lato:wght@900&family=Open+Sans:wght@800&family=Roboto:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">ethics<span>.ai</span></div>
-        <nav>
+        <div class="logo" role="banner">
+            <a href="/" aria-label="ethics.ai home">ethics<span>.ai</span></a>
+        </div>
+        <nav aria-label="Main navigation">
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
             <a href="pricing.html">Pricing</a>
             <a href="resources.html">Resources</a>
         </nav>
-        <button class="signin-btn" onclick="showPopup()">Sign in</button>
+        <button class="signin-btn" aria-label="Sign in" onclick="showPopup()">Sign in</button>
     </header>
     <main>
-        <section class="hero">
-            <h1>Let AI handle ethics, so you don't have to</h1>
+        <section class="hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Let AI handle ethics, so you don't have to</h1>
             <p>Empowering the future with state-of-the-art AI solutions.</p>
-            <a href="#" class="cta-btn">Schedule a Moral Demo</a>
+            <a href="#schedule-demo" class="cta-btn" role="button">Schedule a Moral Demo</a>
         </section>
-        <section class="trusted-by">
-            <h2>Trusted by</h2>
-            <div class="company-cards">
-                <div class="company-card">Amazin</div>
-                <div class="company-card">Meeta</div>
-                <div class="company-card">Alphabits</div>
-                <div class="company-card">Testa</div>
-                <div class="company-card">Caca Coco</div>
-                <div class="company-card">Nester</div>
+        
+        <section class="trusted-by" aria-labelledby="trusted-heading">
+            <h2 id="trusted-heading">Trusted by</h2>
+            <div class="company-cards" role="list">
+                <div class="company-card amazin" role="listitem">amazin</div>
+                <div class="company-card meeta" role="listitem">meeta</div>
+                <div class="company-card alphabits" role="listitem">alphabits</div>
+                <div class="company-card testa" role="listitem">testa</div>
+                <div class="company-card caca-coco" role="listitem">Caca<span>Coco</span></div>
+                <div class="company-card nester" role="listitem">nester</div>
             </div>
         </section>
-        <section class="ethics-box">
-            <h2>Ethics shouldn't slow innovation, let AI do it for you.</h2>
+        
+        <section class="ethics-box" aria-labelledby="ethics-heading">
+            <h2 id="ethics-heading">Ethics shouldn't slow innovation, let AI do it for you.</h2>
             <p>At ethics.ai, we use advanced machine learning to make complex moral decisions faster, cheaper, and more profitable than ever before. Our proprietary ethical reasoning engine has analyzed over 10 billion online comments to develop the most statistically popular sense of right and wrong.</p>
         </section>
-        <section class="stats-section">
-            <hr class="stats-divider">
+        
+        <section class="stats-section" aria-label="Statistics">
+            <hr class="stats-divider" aria-hidden="true">
             <div class="stats-cards">
-                <div class="stat-card stat-green stat-card-left">
-                    <img src="" alt="" class="stat-image">
-                    <p>98% Reduction in Human Guilt</p>
-                </div>
-                <div class="stat-card stat-beige">
-                    <img src="" alt="" class="stat-image">
-                    <p>6M+ Ethical Dilemmas Automated</p>
-                </div>
-                <div class="stat-card stat-purple stat-card-right">
-                    <img src="" alt="" class="stat-image">
-                    <p>$271k Saved in Compliance Costs</p>
-                </div>
+                <article class="stat-card stat-green stat-card-left">
+                    <img src="images/guilt.png" alt="Guilt" class="stat-image">
+                    <p><strong>98%</strong> Reduction in Human Guilt</p>
+                </article>
+                <article class="stat-card stat-beige">
+                    <img src="images/cogs.png" alt="Automated" class="stat-image">
+                    <p><strong>271K</strong> Ethical Dilemmas Automated</p>
+                </article>
+                <article class="stat-card stat-purple stat-card-right">
+                    <img src="images/compliant.png" alt="Compliance" class="stat-image">
+                    <p><strong>$6M+</strong> Saved in Compliance Costs</p>
+                </article>
             </div>
         </section>
     </main>
-    <div id="signin-popup" class="popup">
+    <div id="signin-popup" class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true" hidden>
         <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup()">&times;</span>
+            <button class="close-btn" onclick="hidePopup()" aria-label="Close popup">&times;</button>
+            <h2 id="popup-title">Sign In</h2>
             <p>Function not available yet</p>
         </div>
     </div>
-    <footer>
-        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
+    
+    <footer role="contentinfo">
+        <p>&copy; 2025 ethics.ai. All Rights Reserved.</p>
+        <p class="disclaimer">ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.</p>
     </footer>
+
     <script>
+        // Popup functionality
+        const popup = document.getElementById('signin-popup');
+        
         function showPopup() {
-            document.getElementById('signin-popup').style.display = 'flex';
+            popup.hidden = false;
+            popup.querySelector('button').focus();
         }
+        
         function hidePopup() {
-            document.getElementById('signin-popup').style.display = 'none';
+            popup.hidden = true;
         }
-        window.onclick = function(event) {
-            var popup = document.getElementById('signin-popup');
-            if (event.target == popup) {
+        
+        // Close popup when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
                 hidePopup();
             }
-        }
+        });
+
+        // Close popup with Escape key
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !popup.hidden) {
+                hidePopup();
+            }
+        });
     </script>
 </body>
 </html>

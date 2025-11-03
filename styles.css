@@ -126,19 +126,86 @@ nav a.active:hover:after {
     align-items: center;
 }
 .company-card {
-    background: #e8e8e8;
-    color: #333333;
     padding: 1.5rem 2.5rem;
     border-radius: 0.8rem;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, background 0.3s;
+    text-align: center;
+    min-width: 180px;
 }
+
 .company-card:hover {
     transform: translateY(-4px);
-    background: #d4d4d4;
+}
+
+/* Amazin (Amazon) */
+.company-card.amazin {
+    font-family: 'Ubuntu', sans-serif;
+    background: #232f3e;
+    color: #ff9900;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Meeta (Meta) */
+.company-card.meeta {
+    font-family: 'Open Sans', sans-serif;
+    background: #0668E1;
+    color: white;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+}
+
+/* Alphabits (Google) */
+.company-card.alphabits {
+    font-family: 'Product Sans', 'Roboto', sans-serif;
+    background: white;
+    color: #4285f4;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.company-card.alphabits::first-letter {
+    color: #ea4335;
+}
+
+/* Testa (Tesla) */
+.company-card.testa {
+    font-family: 'Roboto', sans-serif;
+    background: black;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Caca Coco (Coca Cola) */
+.company-card.caca-coco {
+    font-family: 'Lato', sans-serif;
+    background: #f40009;
+    color: white;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    padding: 1.5rem 3rem;
+}
+
+.company-card.caca-coco span {
+    margin-left: 0.5rem;
+}
+
+/* Nester (Nestle) */
+.company-card.nester {
+    font-family: 'Open Sans', sans-serif;
+    background: white;
+    color: #005293;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
 }
 .ethics-box {
     background: #f0ead6;
@@ -285,14 +352,157 @@ nav a.active:hover:after {
     line-height: 1.6;
     color: #666666;
 }
-.pricing-cards .card {
-    background: #f0ead6;
+.pricing-section {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.card:hover {
-    transform: scale(1.07) rotate(-2deg);
-    background: #d4d4d4;
-    color: #333333;
-    cursor: pointer;
+
+.pricing-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured {
+    border: 2px solid #333;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.card-header {
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.card-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+}
+
+.price-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.card-features {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.card-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-features li {
+    padding: 0.8rem 0;
+    color: #666;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-features li.included::before {
+    content: "✓";
+    color: #4CAF50;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.card-features li.excluded {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.card-features li.excluded::before {
+    content: "×";
+    color: #999;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.pricing-cta {
+    display: block;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pricing-cta:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
 }
 .about {
     padding: 4rem 10vw 2.5rem;
@@ -465,4 +675,185 @@ footer {
     }
     .hero h1 { font-size: 2.2rem; }
     .about, .contact { padding: 2rem 3vw; }
+}
+
+.enterprise-hero {
+    background: linear-gradient(rgba(51, 51, 51, 0.02), rgba(51, 51, 51, 0.05));
+    padding: 6rem 2rem;
+    text-align: center;
+    animation: fadeIn 1.6s cubic-bezier(.61,-0.18,.44,1.11) both;
+}
+
+.enterprise-hero h1 {
+    font-size: 3.6rem;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.industries-box {
+    margin: 4rem auto;
+    padding: 4rem;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.industry-col {
+    text-align: left;
+}
+
+.industry-col h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.industry-col p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.testimonial-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quote-box {
+    background: #1a1a1a;
+    color: white;
+    padding: 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.quote-box blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+.quote-box p {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.4;
+    margin: 0 0 1.5rem;
+    font-weight: 300;
+}
+
+.quote-box cite {
+    font-size: 1.1rem;
+    color: rgb(22, 22, 22);
+    font-style: normal;
+}
+
+@media (max-width: 1024px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .enterprise-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .industries-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-box {
+        padding: 2rem;
+    }
+    
+    .quote-box p {
+        font-size: 1.6rem;
+    }
+}
+
+.faq-section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-section h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.faq-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.faq-item {
+    background: #f0ead6;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.question {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.answer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 3rem 1rem;
+    }
+
+    .faq-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
+    }
+
+    .question {
+        font-size: 1.2rem;
+    }
+
+    .answer {
+        font-size: 1.1rem;
+    }
 }

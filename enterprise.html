@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise | ethics.ai</title>
+    <meta name="description" content="Enterprise solutions for AI-powered ethics management and moral decision automation">
+    <meta name="keywords" content="enterprise AI ethics, corporate ethics management, ethical automation">
+    <title>Enterprise Solutions | ethics.ai</title>
+    <!-- Preload fonts for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -12,51 +15,96 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><div class="logo">ethics<span>.ai</span></div></a>
-        <nav>
+        <div class="logo" role="banner">
+            <a href="index.html" aria-label="ethics.ai home">ethics<span>.ai</span></a>
+        </div>
+        <nav aria-label="Main navigation">
             <a href="features.html">Features</a>
             <a href="enterprise.html">Enterprise</a>
             <a href="pricing.html">Pricing</a>
             <a href="resources.html">Resources</a>
         </nav>
-        <button class="signin-btn" onclick="showPopup()">Sign in</button>
+        <button class="signin-btn" aria-label="Sign in" onclick="showPopup()">Sign in</button>
     </header>
     <main>
-        <section class="about">
-            <h2>Enterprise</h2>
-            <p>Our enterprise solutions let you integrate robust AI-powered ethics management into your workflows.<br><br>
-            Benefits include:
-            <ul style="text-align:left;max-width:540px;margin:1rem auto;">
-              <li>Scalable compliance modules</li>
-              <li>Custom bias reporting</li>
-              <li>Team access control</li>
-              <li>Dedicated support & training</li>
-              <li>Policy audit trails</li>
-            </ul></p>
+        <section class="hero enterprise-hero" aria-labelledby="enterprise-heading">
+            <h1 id="enterprise-heading">Scale Your Morality with Confidence</h1>
+            <p class="hero-subtitle">ethics.ai integrates seamlessly into your existing decision-making pipeline, ensuring consistent, data-backed moral decisions across all departments.</p>
+        </section>
+
+        <section class="ethics-box industries-box" aria-labelledby="industries-heading">
+            <h2 id="industries-heading">Industries We Serve</h2>
+            <div class="industries-grid">
+                <div class="industry-col">
+                    <h3>Finance</h3>
+                    <p>Automate away responsibility for financial decisions. Let AI handle those pesky moral hazards.</p>
+                </div>
+                <div class="industry-col">
+                    <h3>Healthcare</h3>
+                    <p>Transform life-or-death choices into simple cost-benefit analyses. Healthcare has never been more efficient.</p>
+                </div>
+                <div class="industry-col">
+                    <h3>Defense</h3>
+                    <p>Ethical warfare made easy. Our AI handles the tough calls so your team doesn't have to.</p>
+                </div>
+                <div class="industry-col">
+                    <h3>Education</h3>
+                    <p>Teach the next generation that morality is just another optimization problem.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section" aria-label="Customer Testimonial">
+            <div class="quote-box">
+                <blockquote>
+                    <p>"Our board members sleep better knowing the algorithm approved everything we did."</p>
+                    <footer>
+                        <cite>- Anonymous CEO, Fortune 500 Company</cite>
+                    </footer>
+                </blockquote>
+            </div>
         </section>
     </main>
-    <div id="signin-popup" class="popup">
+    <div id="signin-popup" class="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true" hidden>
         <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup()">&times;</span>
-            <p>what did you expect</p>
+            <button class="close-btn" onclick="hidePopup()" aria-label="Close popup">&times;</button>
+            <h2 id="popup-title">Sign In</h2>
+            <p>What did you expect?</p>
         </div>
     </div>
-    <footer>
-        © 2025 ethics.ai. All Rights Reserved. ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.
+    
+    <footer role="contentinfo">
+        <p>&copy; 2025 ethics.ai. All Rights Reserved.</p>
+        <p class="disclaimer">ethics.ai assumes no responsibility for moral outcomes. All ethical results are approximate.</p>
     </footer>
+
     <script>
+        // Popup functionality
+        const popup = document.getElementById('signin-popup');
+        
         function showPopup() {
-            document.getElementById('signin-popup').style.display = 'flex';
+            popup.hidden = false;
+            popup.querySelector('button').focus();
         }
+        
         function hidePopup() {
-            document.getElementById('signin-popup').style.display = 'none';
+            popup.hidden = true;
         }
-        window.onclick = function(event) {
-            var popup = document.getElementById('signin-popup');
-            if (event.target == popup) {
+        
+        // Close popup when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
                 hidePopup();
             }
-        }
+        });
+
+        // Close popup with Escape key
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !popup.hidden) {
+                hidePopup();
+            }
+        });
+
         // Add active class to current page
         document.querySelector('nav a[href="enterprise.html"]').classList.add('active');
     </script>
